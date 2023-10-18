@@ -144,3 +144,19 @@ def retrieve_ship(pk, url):
             serialized_ship = json.dumps({})  # Return an empty JSON object if ship not found
 
     return serialized_ship
+
+def insert_ship(ship_data):
+    with sqlite3.connect("./shipping.db") as conn:
+        db_cursor = conn.cursor()
+
+        db_cursor.execute(
+            """
+            INSERT INTO "Ship" VALUES (NULL, ?, ?)
+            """,
+            (ship_data['name'], ship_data['hauler_id'])
+        )
+
+        ship = db_cursor.fetchone()
+        serialized_ship = json.dumps(ship)
+
+    return serialized_ship
