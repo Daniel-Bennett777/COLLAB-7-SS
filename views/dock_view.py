@@ -91,8 +91,7 @@ def insert_dock(dock_data):
             """,
             (dock_data['location'], dock_data['capacity'])
         )
-
-        dock = db_cursor.fetchone()
-        serialized_dock = json.dumps(dock)
+            
+        serialized_dock = "Post Successfully Added"
 
     return serialized_dock

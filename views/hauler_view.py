@@ -138,7 +138,7 @@ def insert_hauler(hauler_data):
             (hauler_data['name'], hauler_data['dock_id'])
         )
 
-        hauler = db_cursor.fetchone()
-        serialized_hauler = json.dumps(hauler)
+       
+        serialized_hauler = "Post Successfully Added"
 
     return serialized_hauler
