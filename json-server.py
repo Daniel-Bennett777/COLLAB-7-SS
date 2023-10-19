@@ -122,19 +122,18 @@ class JSONServer(HandleRequests):
 
         if url["requested_resource"] == "docks":
             response_body = insert_dock(request_body)
-            return self.response(response_body, status.HTTP_200_SUCCESS.value)
+            return self.response(response_body, status.HTTP_201_SUCCESS_CREATED.value)
 
         elif url["requested_resource"] == "haulers":
             response_body = insert_hauler(request_body)
-            return self.response(response_body, status.HTTP_200_SUCCESS.value)
+            return self.response(response_body, status.HTTP_201_SUCCESS_CREATED.value)
 
         elif url["requested_resource"] == "ships":
             response_body = insert_ship(request_body)
-            return self.response(response_body, status.HTTP_200_SUCCESS.value)
+            return self.response(response_body, status.HTTP_201_SUCCESS_CREATED.value)
 
         else:
             return self.response("", status.HTTP_404_CLIENT_ERROR_RESOURCE_NOT_FOUND.value)
-
 
 
 

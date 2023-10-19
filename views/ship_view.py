@@ -156,7 +156,7 @@ def insert_ship(ship_data):
             (ship_data['name'], ship_data['hauler_id'])
         )
 
-        ship = db_cursor.fetchone()
-        serialized_ship = json.dumps(ship)
+        
+        serialized_ship = "Post Successfully Added"
 
     return serialized_ship
